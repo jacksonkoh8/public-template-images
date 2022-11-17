@@ -75,11 +75,12 @@
         for "src", replace "#template1" with model name from above, make sure the # is there immediately in front of the image name
         you can leave position unchanged, but you can modify the x y z coordinates to adjust where your image appears above the Hiro Marker, if necessary,
         you can leave rotation unchanged, but you can modify the x y z rotation to adjust the angle that your image appears above the Hiro Marker, if necessary,
-        you can leave scale unchanged, but you can modify the x y z scale to adjust the size of your image when it first loads, if necessary
+        you can leave scale unchanged, but you can modify the x y z scale to adjust the size of your image when it first loads, if necessary,
+        delete "gesture-handler" below if you don't want the images to be rotated
       -->
         <a-entity
           id="template1-image"
-          position="0 0 0"
+          position="0 0 -0.2"
           rotation="0 0 0"
           scale="2 2 2"
           class="clickable"
@@ -91,7 +92,7 @@
       -->
         <a-entity
           id="template2-image"
-          position="0 0 1"
+          position="0 0 1.2"
           rotation="-90 0 0"
           scale="2 2 2"
           class="clickable"
