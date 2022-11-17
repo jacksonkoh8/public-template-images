@@ -43,22 +43,13 @@
       id="scene"
     >
       <a-assets>
-        <!-- this is a commment: for "id", replace "template" with your exact model name (without file extension) make sure the -obj is immediately behind the model name, 
-          for "src" replace "template" with model name, make sure the .obj is immediately behind the model name,
-          make sure that the model file is placed in the same repository where this index.html file is located
+        <!-- this is a commment: for "id", replace "template1" with your exact image name (without file extension), 
+          for "src" replace "template1" with image name, make sure the .jpg or .png or any other image file extension is immediately behind the image name,
+          make sure that the image file is placed in the same repository where this index.html file is located
+          repeat for "template2"
         -->
-        <a-asset-item
-          id="template-obj"
-          src="template.obj"
-        >
-        <!-- this is a commment: repeat the same for mtl file
-        -->
-        </a-asset-item>
-        <a-asset-item
-          id="template-mtl"
-          src="template.mtl"
-        >
-        </a-asset-item>
+        <img id="template1" src="template1.jpg">
+        <img id="template2" src="template2.jpg">
       </a-assets>
 
       <a-marker
@@ -80,16 +71,15 @@
         >
         </a-sky>        
         
-      <!-- this is a commment: for "id", replace "template" with model name, make sure the "-model" is there immediately behind the model name
-        for "obj-model", replace "#template-obj" and "#template-mtl" with model name from a-asset-item above, make sure the # is there immediately in front of the model name and the -obj and -mtl are immediately behind the model name
-        you can leave position unchanged, but you can modify the x y z coordinates to adjust where your model appears above the Hiro Marker, if necessary,
-        you can leave rotation unchanged, but you can modify the x y z rotation to adjust the angle that your model appears above the Hiro Marker, if necessary,
-        you can leave scale unchanged, but you can modify the x y z scale to adjust the size of your model when it first loads, if necessary,
-        OBJ 3D models cannot have animation
+      <!-- this is a commment: for "id", replace "template1" with iamge name, make sure the "-image" is there immediately behind the image name
+        for "src", replace "#template1" with model name from above, make sure the # is there immediately in front of the image name
+        you can leave position unchanged, but you can modify the x y z coordinates to adjust where your image appears above the Hiro Marker, if necessary,
+        you can leave rotation unchanged, but you can modify the x y z rotation to adjust the angle that your image appears above the Hiro Marker, if necessary,
+        you can leave scale unchanged, but you can modify the x y z scale to adjust the size of your image when it first loads, if necessary
       -->
         <a-entity
-          id="template-model"
-          obj-model="obj: #template-obj; mtl: #template-mtl"
+          id="template1-image"
+          <a-image src="#template1"></a-image>
           position="0 0 0"
           rotation="0 0 0"
           scale="1 1 1"
@@ -97,6 +87,18 @@
           gesture-handler        
         >
         </a-entity>
+      <!-- this is a commment: repeat for "template2"
+      -->
+        <a-entity
+          id="template2-image"
+          <a-image src="#template2"></a-image>
+          position="0 0 0"
+          rotation="-90 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler        
+        >
+        </a-entity>    
 
       </a-marker>
       <a-entity camera></a-entity>
